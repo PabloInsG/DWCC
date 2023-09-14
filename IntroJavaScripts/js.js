@@ -1,3 +1,4 @@
+/*
 let num1 = 2;
 let num2 = 3;
 
@@ -64,3 +65,117 @@ a^=b;
 
 console.log( a);
 
+let mensaje = (edad>18) ? "Mayor" : "Menor";
+
+console.log(mensaje);
+
+*/
+
+function randomNumber(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    var num1 = Math.floor(Math.random() * (max-min) + min); 
+    var num2 = Math.floor(Math.random() * (max-min) + min); 
+    var num3 = Math.floor(Math.random() * (max-min) + min); 
+    if(num1 >= num2 && num1 >= num3){
+        console.log(`${num1} es el numero mas grande que ${num2} y ${num3}`);
+    }
+    else if(num2 >=  num1 && num2 >= num3){
+        console.log(`${num2} es el numero mas grande ${num1} y ${num3}`);
+    }
+    else{
+        console.log(`${num3} es el numero mas grande ${num1} y ${num2}`);
+    }
+    
+    if(num1 <= num2 && num1 <= num3){
+        console.log(`${num1} es el numero mas pequeño ${num2} y ${num3}`);
+    }
+    else if(num2 <=  num1 && num2 <= num3){
+        console.log(`${num2} es el numero mas pequeño ${num1} y ${num3}`);
+    }
+    else{
+        console.log(`${num3} es el numero mas pequeño ${num1} y ${num2}`);
+    }   
+}
+
+randomNumber(1,50);
+
+/*
+SWITCH
+
+let numero = prompt("Introduce un numero:");
+switch (Number(numero)){
+    case 1:
+            console.log("Uno");
+            break;
+    case 2:
+            console.log("Dos");
+            break;
+    case 3:
+            console.log("Tres");
+            break;
+    case 4:
+            console.log("Cuatro");
+            break;
+    case 5:
+            console.log("Cinco");
+            break;
+    case 6:
+            console.log("Seis");
+            break;
+    case 7:
+            console.log("Siete");
+            break;
+    case 8:
+            console.log("Ocho");
+            break;
+    case 9:
+            console.log("Nueve");
+            break;
+    case 10:
+            console.log("Diez");
+            break;
+    default:
+            console.log("Incorrecto")
+} 
+*/
+/*
+let pases = 0;
+do{
+    if(pases % 2 != 0)
+    console.log(`Pases numero ${pases}`);
+    pases++;
+}
+while(pases<=1000)
+*/
+/*
+a imprime a suma de dos numeros pedidos por pantalla
+b imprime o factorial del numero pedido por pantalla
+c imprime el resto de la division pedidos por pantalla
+*/
+
+let eleccion = prompt("Introduce una opcion: a) suma b) factorial c) resto de una division")
+
+switch(eleccion){
+    case "a":
+        let num1 = prompt("Primer numero");
+        let num2 = prompt("Segundo numero");
+        var suma = Number(num1) + Number(num2);
+        console.log(suma);
+        break;
+    case "b":
+        let numero = prompt("Introduce el numero que desea ver el factorial");
+        do{
+            
+        }while(numero >= 1)
+        console.log(factorial);
+        break;
+    case "c":
+        let numero1 = prompt("Primer numero");
+        let numero2 = prompt("Segundo numero");
+        var resto = numero1 % numero2;
+        console.log(resto);
+        break;
+    default:
+        console.log("Incorrecto");
+}
