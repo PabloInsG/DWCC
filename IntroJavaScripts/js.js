@@ -30,3 +30,37 @@ console.log(numeroHexadecimal);
 console.log(numeroOctal);
 console.log(potencia);
 console.log(sumaMasDivision);
+
+var numero = Number.MAX_SAFE_INTEGER;
+
+document.write("<br>", numero);
+
+var ano = 2023;
+
+document.write(`<br>Año de nacimiento: ${ano-Number(edad)}`);
+
+var nomeVariable = "Hola";
+
+function ola(){
+    var nomeVariable = "Hola 2";
+    console.log(nomeVariable);
+}
+console.log(nomeVariable);
+
+let mensaxe ="Estas seguro de querer eliminar?";
+let respues= confirm(mensaxe);
+
+console.log(`Respuesta ${respues}`)
+
+const PI = 3.14159;
+
+alert(`Lembra usar esta aproximación nos teus cálculos: ${PI}`);
+
+var a  = 0b111;
+var b = 0b010;
+console.log( a);
+
+a^=b;
+
+console.log( a);
+
