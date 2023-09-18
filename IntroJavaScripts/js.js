@@ -152,10 +152,9 @@ while(pases<=1000)
 a imprime a suma de dos numeros pedidos por pantalla
 b imprime o factorial del numero pedido por pantalla
 c imprime el resto de la division pedidos por pantalla
-*/
+
 
 let eleccion = prompt("Introduce una opcion: a) suma b) factorial c) resto de una division")
-
 switch(eleccion){
     case "a":
         let num1 = prompt("Primer numero");
@@ -179,3 +178,35 @@ switch(eleccion){
     default:
         console.log("Incorrecto");
 }
+*/
+
+let texto3="Oso";
+let texto4="Ñu";
+console.log(texto3.localeCompare(texto4,"es"));
+console.log(texto3.length);
+
+let cara = "casona";
+console.log(cara.charAt(5));
+console.log(cara.charCodeAt(5));
+
+let texto = "al alba, amigo mio, al alba";
+console.log(texto.toUpperCase());
+console.log(texto.lastIndexOf("a"));
+console.log(texto.endsWith("11"));
+console.log(texto.replace("alba", "hilal"));
+console.log(texto.slice(3,8));
+
+//Pedir texto, el texto a buscar, resultado de numero de veces que salga
+
+let pedirTexto  = prompt("Introduce una cadena de texto");
+
+let pedirCaracter = prompt("Introduce el caracter que desea consultar");
+var contador = 0;
+var posicion = pedirTexto.indexOf(pedirCaracter);
+
+while(posicion != -1){
+    contador++;
+    console.log(contador);
+    posicion =pedirTexto.indexOf(pedirCaracter, posicion+1);
+}
+
