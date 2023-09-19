@@ -59,13 +59,13 @@ var sueldoFinal = sueldoBase + comision;
 console.log(sueldoFinal);
 
 //Ejercicio 7
-/*
+
 let usuario = prompt("Introduce los grados en fahrenheit para calcular a celsius:");
 
 var celsius = (Number(usuario) - 32) * 5 / 9;
 
-console.log(celsius);
-*/
+console.log(celsius.toFixed(2));
+
 //Ejercicio 8
 let usuarioAltura = prompt("Introduce tu altura (en cm):");
 let usuarioPeso = prompt("Introduce tu peso:");
