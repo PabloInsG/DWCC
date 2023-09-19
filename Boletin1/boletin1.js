@@ -4,7 +4,7 @@ var b = 2;
 
 var suma = a + b;
 
-document.write(suma);
+document.write("Resultado ejercicio 1: ", suma);
 
 //Ejercicio 2
 var meses = 0;
@@ -15,8 +15,7 @@ do{
     meses++;
 } while(meses <= 3)
 
-console.log(resto);
-console.log(suma);
+console.log("Ahorra en 3 meses", resto, "€.");
 
 
 //Ejercicio 3
@@ -24,7 +23,7 @@ var compra = 50;
 var descuento = 15;
 
 var total = compra - (compra * descuento / 100);
-console.log(total);
+console.log("Precio final de la compra:", total);
 
 //Ejercicio 4
 var clase = 11;
@@ -34,8 +33,8 @@ var mujeres = 1;
 var porcentajeHombres = hombres / clase * 100;
 var porcentajeMujeres = mujeres / clase * 100;
 
-console.log(porcentajeHombres);
-console.log(porcentajeMujeres);
+console.log("Porcentaje Hombres:", porcentajeHombres);
+console.log("Porcentaje Mujeres:", porcentajeMujeres);
 
 //Ejercicio 5 
 var euros = 5;
@@ -45,8 +44,8 @@ var peseta = 166.386;
 var euroToDolar = euros * dolar;
 var euroToPeseta = euros *peseta;
 
-console.log(euroToDolar);
-console.log(euroToPeseta);
+console.log("Dolar:", euroToDolar, "$.");
+console.log("Peseta:", euroToPeseta);
 
 
 //Ejercicio 6
@@ -56,7 +55,7 @@ var comision = ventas * 10 / 100;
 
 var sueldoFinal = sueldoBase + comision;
 
-console.log(sueldoFinal);
+console.log("Sueldo con la comision:", sueldoFinal, "€");
 
 //Ejercicio 7
 
@@ -64,7 +63,7 @@ let usuario = prompt("Introduce los grados en fahrenheit para calcular a celsius
 
 var celsius = (Number(usuario) - 32) * 5 / 9;
 
-console.log(celsius.toFixed(2));
+console.log(celsius.toFixed(2), "°C");
 
 //Ejercicio 8
 let usuarioAltura = prompt("Introduce tu altura (en cm):");
@@ -75,7 +74,7 @@ var calorias = 10 * Number(usuarioPeso) + 6.25 * Number(usuarioAltura) - 5 * Num
 var imc = usuarioPeso / ((usuarioAltura / 100) * (usuarioAltura / 100));
 
 
-document.write(`
+document.write(`<br><br>
                 <table border="1" id="tabla">
                     <tr>
                         <td>Altura (cm)</td>
