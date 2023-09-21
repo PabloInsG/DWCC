@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let anoUsuario = prompt("Proporciona un año para saber que competicion se disputa ese año:");
+
+        if(anoUsuario % 4 == 0 && anoUsuario % 2 == 0){
+            document.write(`El ${anoUsuario} se celebran los juegos olimpicos y el campeonato de europa`);
+        }  else if(anoUsuario % 2 == 0){
+            document.write(`El ${anoUsuario} se juega el campeonato de europa`);
+        } else{
+            document.write(`El ${anoUsuario} se juegan los Mundiales`);
+        }
+    </script>
+</body>
+</html>

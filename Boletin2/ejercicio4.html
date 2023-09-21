@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const figura = prompt("Selecciona una figura entre triangulo, cuadrado, rectangulo o circulo");
+       
+        let perimetroFigura;
+
+            if(figura === "triangulo"){
+                let baseTriangulo = prompt("Proporciona la base del triangulo en cm:");
+                let ladosTriangulo = prompt("Proporciona el lado del triangulo en cm:");
+                perimetroFigura = Number(baseTriangulo) + Number(ladosTriangulo) + Number(ladosTriangulo);
+                document.write("El perimetro del triangulo es: ", perimetroFigura, `<br>`);
+                } else if(figura === "cuadrado"){
+                let ladoCuadrado = prompt("Proporciona el lado del cuadrado en cm:");
+                perimetroFigura = Number(ladoCuadrado) + Number(ladoCuadrado) + Number(ladoCuadrado) + Number(ladoCuadrado);
+                document.write("El perimetro del cuadrado es:", perimetroFigura, `<br>` );
+            } else if(figura === "rectangulo" ){
+                let largoRectangulo = prompt("Proporciona el largo del rectangulo en cm:");
+                let anchoRectangulo = prompt("Proporciona el ancho del rectangulo en cm:");
+                perimetroFigura = Number(largoRectangulo) + Number(largoRectangulo) + Number(anchoRectangulo) + Number(anchoRectangulo);
+                document.write("El perimetro del rectangulo es:", perimetroFigura, `<br>`);
+            }else if(figura === "circulo"){
+                let diametroCirculo = prompt("Proporciona el diametro del circulo en cm:");
+                perimetroFigura = Math.PI * diametroCirculo;
+                document.write("El perimetro del circulo es:", perimetroFigura, `<br>`); 
+            }else{
+                alert("Opcion introducida incorrecta");
+            }
+    </script>
+</body>
+</html>
