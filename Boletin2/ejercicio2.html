@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const figura1 = prompt("Selecciona una figura entre triangulo, cuadrado, rectangulo o circulo");
+        const figura2 = prompt("Selecciona una figura entre triangulo, cuadrado, rectangulo o circulo");
+        
+        let areaFigura1, areaFigura2;
+
+            if(figura1 === "triangulo"){
+                let baseTriangulo = prompt("Proporciona la base del triangulo en cm:");
+                let alturaTriangulo = prompt("Proporciona la altura del triangulo en cm:");
+                areaFigura1 = baseTriangulo * alturaTriangulo / 2;
+                document.write("La superficie del triangulo es: ", areaFigura1, `<br>`);
+                } else if(figura1 === "cuadrado"){
+                let ladoCuadrado = prompt("Proporciona el lado del cuadrado en cm:");
+                areaFigura1 = ladoCuadrado * ladoCuadrado;
+                document.write("La superficie del cuadrado es:", areaFigura1, `<br>` );
+            } else if(figura1 === "rectangulo" ){
+                let largoRectangulo = prompt("Proporciona el largo del rectangulo en cm:");
+                let anchoRectangulo = prompt("Proporciona el ancho del rectangulo en cm:");
+                areaFigura1 = largoRectangulo * anchoRectangulo;
+                document.write("La superficie del rectangulo es:", areaFigura1, `<br>`);
+            }else if(figura1 === "circulo"){
+                let radioCirculo = prompt("Proporciona el radio del circulo en cm:");
+                areaFigura1 = Math.PI * Math.pow(radioCirculo, 2);
+                document.write("La superficie del circulo es:", areaFigura1, `<br>`); 
+            }else{
+                alert("Opcion introducida incorrecta");
+            }
+            if(figura2 === "triangulo"){
+                let baseTriangulo = prompt("Proporciona la base del triangulo en cm:");
+                let alturaTriangulo = prompt("Proporciona la altura del triangulo en cm:");
+                areaFigura2 = baseTriangulo * alturaTriangulo / 2;
+                document.write("La superficie del triangulo es: ", areaFigura2, `<br>`);
+            } else if(figura2 === "cuadrado"){
+                let ladoCuadrado = prompt("Proporciona el lado del cuadrado en cm:");
+                areaFigura2 = ladoCuadrado * ladoCuadrado;
+                document.write("La superficie del cuadrado es: ", areaFigura2, `<br>`);
+            } else if(figura2 === "rectangulo" ){
+                let largoRectangulo = prompt("Proporciona el largo del rectangulo en cm:");
+                let anchoRectangulo = prompt("Proporciona el ancho del rectangulo en cm:");
+                areaFigura2 = largoRectangulo * anchoRectangulo;
+                document.write("La superficie del rectangulo es: ", areaFigura2, `<br>`);
+            }else if(figura2 === "circulo"){
+                let radioCirculo = prompt("Proporciona el radio del circulo en cm:");
+                areaFigura2 = Math.PI * Math.pow(radioCirculo, 2);
+                document.write("La superficie del circulo es: ", areaFigura2, `<br>`); 
+            }else{
+                alert("Opcion introducida incorrecta");
+            }
+
+            if(areaFigura1 > areaFigura2){
+                document.write("El area de la figura 1 es mas grande");
+            } else if (areaFigura1 < areaFigura2){
+                document.write("El area de la figura 2 es mas grande");
+            } else{
+                document.write("Las areas de las dos figuras son iguales");
+            }
+            
+
+    </script>
+</body>
+</html>
