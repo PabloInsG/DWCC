@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let linias = prompt("Numero de linias que desea que se impriman:");
+        document.write("Lineas indicadas: ", linias);
+
+        for(let i = 1; i <= Number(linias); i++){
+            document.write(`<br>*`);
+            for(let j = 1; j <= linias -1; j++){
+                document.write("*");
+            }
+        }
+    </script>
+</body>
+</html>
