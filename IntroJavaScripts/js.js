@@ -197,7 +197,7 @@ console.log(texto.replace("alba", "hilal"));
 console.log(texto.slice(3,8));
 
 //Pedir texto, el texto a buscar, resultado de numero de veces que salga
-
+/*
 let pedirTexto  = prompt("Introduce una cadena de texto");
 
 let pedirCaracter = prompt("Introduce el caracter que desea consultar");
@@ -209,4 +209,86 @@ while(posicion != -1){
     console.log(contador);
     posicion =pedirTexto.indexOf(pedirCaracter, posicion+1);
 }
+*/
 
+//Arrays
+var arrayPrueba = [
+    ["Manzana", 2],
+    ["Naranja", 5],
+    ["Pera", 4]
+];
+
+document.write(`
+        <table border="1" id="tabl" style="text-align: center; width: 400px; background-color:  #b0c2f2">
+            <tr>
+                <td>Fruta</td>
+                <td>Precio</td>
+            </tr>
+            <tr>
+                <td>${arrayPrueba[0][0]}</td>
+                <td>${arrayPrueba[0][1]} €</td>
+            </tr>
+            <tr>
+                <td>${arrayPrueba[1][0]}</td>
+                <td>${arrayPrueba[1][1]} €</td>
+            </tr>
+            <tr>
+                <td>${arrayPrueba[2][0]}</td>
+                <td>${arrayPrueba[2][1]} €</td>
+            </tr>
+        </table>`);
+/*
+var fruta_nueva = prompt("Introduce el nombre de una nueva fruta:");
+var fruta_precio = prompt(`Introduce el precio de ${fruta_nueva}:`);
+arrayPrueba[3] = ["Platano", 4]
+arrayPrueba.push([fruta_nueva, fruta_precio]);
+
+
+document.write(`<br><table border="1" style="text-align: center; width: 400px; background-color:  #ffda9e"><tr><td>Nombre</td><td>Precio</td></tr>`);
+for(var i = 0; i <= arrayPrueba.length; i++){
+    for(var j = 0; j <= arrayPrueba[i].length; j++){
+        document.write(`<tr>`); 
+        document.write(`<td>${arrayPrueba[i][j]}</td>`);
+        document.write(`<td>${arrayPrueba[i][j]}</td>`);
+        document.write(`</tr>`);
+    }
+}
+document.write(`</table>`);
+*/
+var edades = [15, 17, 19, 10, 20, 22];
+var edades = new Array (15, 17, 19, 10, 20, 22);
+var edades = Array(15, 17, 19, 10, 20, 22);
+
+console.log(edades);
+
+let precios = [88.21, 22, 12.24, 33];
+
+for(let i in precios){
+    console.log(`El precio ${i} es ${precios[i]}`);
+}
+
+for(let precio in precios){
+    console.log(precio);
+}
+
+var empleados = [
+    ["Pablo", "Insua", 1300],
+    ["Carlos", "Aldariz", 1400],
+    ["Jesus", "Allo", 1500]
+];
+/*
+for(let i = 0; i <= empleados.length; i++){
+    var nombre = empleados[i][0];
+    var apellido = empleados[i][1];
+    var salario = empleados[i][2];
+    document.write(`Nombre: ${nombre} - Apellido: ${apellido} - Salario: ${salario} €<br>`);
+}
+*/
+
+
+let sinIVA = [20,45,38,95,33,12];
+let conIVA = sinIVA;
+conIVA[0] = 120;
+
+document.write(`${conIVA} <br>`);
+document.write(`${sinIVA} <br>`);

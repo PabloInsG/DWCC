@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pila = [];
+        let eleccion;
+        console.log("1. Insertar al inicio un elemento en la pila");
+        console.log("2. Insertar al final un elemento en la pila");
+        console.log("3. Eliminar un elemento al inicio");
+        console.log("3. Eliminar un elemento al final");
+        console.log("5. Ver los elementos de la pila en forma de pila");
+        console.log("6. Salir");
+        while(eleccion != 6){
+
+        
+        eleccion = prompt("Elija una opción (1-6):");
+            
+            switch(eleccion){
+            case "1":
+                let elmentoInicio = prompt("Que elemento desea introducir al inicio:")
+                pila.unshift(elmentoInicio);
+                break;
+                case "2":
+                    let elementoFinal = prompt("Que elemento desea introducir al final");
+                    pila.push(elementoFinal);
+                    break;
+                    case "3":
+                        if(pila.length != 0){
+                            pila.shift();
+                            console.log("Primer elemento borrado");
+                        } else{
+                            console.log("El array no contiene ningun elemento.");
+                        }
+                        break;
+                        case "4":
+                            if(pila.length != 0){
+                                pila.pop();
+                                console.log("Ultimo elemento borrado");
+                            } else{
+                                console.log("El array no contiene ningun elemento.");
+                            }
+                            break;
+                            case "5":
+                                if(pila.length == 0){
+                                    console.log("El array no contiene ningun elemento.");
+                                } else {
+                                    for(let i = pila.length -1; i >= 0; i--){
+                                        console.log(`${pila[i]}`);
+                                    }
+                                }
+                                break;
+                            case "6":
+                                break;
+                }
+        }
+    </script>
+</body>
+</html>
