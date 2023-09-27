@@ -287,8 +287,28 @@ for(let i = 0; i <= empleados.length; i++){
 
 
 let sinIVA = [20,45,38,95,33,12];
-let conIVA = sinIVA;
+let conIVA = sinIVA.slice();
 conIVA[0] = 120;
 
 document.write(`${conIVA} <br>`);
 document.write(`${sinIVA} <br>`);
+
+
+var array5elementos = [];
+
+let usuarioArray = prompt(`Introduce 5 elementos:`);
+
+for(let i = 0; i <= usuarioArray.length; i++){
+    if(usuarioArray.charAt(i) != " "){
+        array5elementos.push(usuarioArray.charAt(i));
+    }
+}
+document.write(`${array5elementos}`);
+let contador2 = 0;
+let buscarArray = prompt(`Que elemento quieres buscar:`)
+var indice = array5elementos.indexOf(buscarArray);
+while(indice != -1){
+    contador2++;
+    indice = array5elementos.indexOf(buscarArray, indice + 1);
+}
+document.write(`<br>${contador2}`);

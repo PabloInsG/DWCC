@@ -30,28 +30,46 @@ busca polo carácter de substitución.
 let cadenaUsuario = prompt("Introduce una cadena de texto");
 let buscarUsuario = prompt("Introduce un caracter que quieres buscar:");
 let substituirUsuario = prompt("Introduce un caracter que quieres substituir:");
-*/
+
 var substituir = cadenaUsuario.replace(buscarUsuario, substituirUsuario);
 document.write(`<br>Ejercicio 4: <br> Cadena con la substitucion: ${substituir}<br>`);
-
+*/  
 
 /*Escribe un programa que conte cantas veces aparece un carácter específico 
 nunha cadea.
 */
+var caracter = "a";
+let contador = 0;
+
+for(let i = 0; i <= cadenaJunta.length; i++){
+    if(cadenaJunta.charAt(i) == caracter){
+        contador++;
+    }
+}
+document.write(`<br>Ejercicio 5: <br> Cantidad de veces que aparece el caracter "${caracter}" en la cadena "${cadenaJunta}": ${contador}<br>`);
 
 
+/*Escribe un programa que tome unha cadea como argumento e devolva o número 
+de palabras desa cadea.
+*/
 
+let espacios = 0;
+let contadorPalabras = 0;
 
+for(let i = 0; i <= cadenaJunta.length; i++){
+    if(cadenaJunta.length != 0){
+        if(cadenaJunta.charAt(i) == " "){
+            espacios++;
+            contadorPalabras = espacios + 1;
+        }
+    }
+}
 
+document.write(`<br>Ejercicio 6: <br> Cantidad de palabras que tiene la cadena "${cadenaJunta}": ${contadorPalabras}<br>`);
 
-
-//Escribe un programa que tome unha cadea como argumento e devolva o número de palabras desa cadea.
-
-
-
-
-//Escribe un programa que tome unha cadea e devolva esa cadea invertida (é dicir, "hola" pasa a ser "aloh").
-
+/*Escribe un programa que tome unha cadea e devolva esa cadea invertida 
+(é dicir, "hola" pasa a ser "aloh").
+*/
 
 
 
