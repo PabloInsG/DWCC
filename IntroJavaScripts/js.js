@@ -285,7 +285,7 @@ for(let i = 0; i <= empleados.length; i++){
 }
 */
 
-
+/*
 let sinIVA = [20,45,38,95,33,12];
 let conIVA = sinIVA.slice();
 conIVA[0] = 120;
@@ -312,3 +312,61 @@ while(indice != -1){
     indice = array5elementos.indexOf(buscarArray, indice + 1);
 }
 document.write(`<br>${contador2}`);
+
+//SET
+let a = 1;
+var conj = new Set([]);
+while(a < 11){
+    let nombres = prompt(`Introduce el ${a} nombre`);
+    conj.add(nombres);
+    a++;
+}
+
+for(let i of conj){
+    console.log(i);
+}
+*/
+var ciudades = new Set([]);
+let eleccion;
+console.log("1. Introducir una nueva ciudad:");
+console.log("2. Ver ciudades cargadas en el conjunto:");
+console.log("3. Comprobar se una ciudad esta cargada no conjunto:");
+console.log("4. Eliminar una ciudad del conjunto:");
+console.log("5. Salir");
+
+while(eleccion != 5){
+    eleccion = prompt("Elija una opción (1-5):");
+    
+    switch(eleccion){
+        case "1":
+            let insertarCiudad = prompt("Que ciudad desea introducir:");
+            ciudades.add(insertarCiudad);
+            console.log(`La ciudad de ${insertarCiudad} ha sido insertado`);
+            break; 
+            case "2":
+                console.log(`Ciudades cargadas:`)
+                for(let i of ciudades){
+                    console.log(i);
+                }
+            break;
+            case "3":
+                let comprobarCiudad = prompt("Que ciudad desea comprobar si esta:");
+                if(ciudades.has(comprobarCiudad)){
+                    console.log(`${comprobarCiudad} esta`);
+                } else{
+                    console.log(`${comprobarCiudad} no esta`);
+                }
+                break;
+                case "4":
+                    let borrarCiudad = prompt("Que ciudad desea borrar:");
+                    if(ciudades.has(borrarCiudad)){
+                        ciudades.delete(borrarCiudad);
+                        console.log(`La ciudad de ${borrarCiudad} ha sido eliminada.`);
+                    } else{
+                        console.log(`La ciudad de ${borrarCiudad} no se encuentra en el conjunto.`);
+                    }
+                break;
+        case "5":
+                break;
+    }
+}
