@@ -1,0 +1,23 @@
+.cajas{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 500px;
+}
+
+.caja1{
+    width: 200px;
+    height: 250px;
+    border: solid 1px #000000;
+}
+.caja2{
+    width: 200px;
+    height: 250px;
+    border: solid 1px #000000;
+}
+
+.numeros{
+    display: flex;
+    flex-direction: column;
+
+}

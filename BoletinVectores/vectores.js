@@ -1,16 +1,9 @@
-/*
-
-Encher unha matriz 3x3 e amosar a diagonal principal.
-Solicitar os datos dunha matriz 3x4 e amosala trasposta.
-
-
-*/
-
 //Imprimir os valores dun vector de 100 elementos.
 var vector100 = [];
 for(let i = 0; i <= 100; i++){
     vector100[i] = vector100.push(Math.random(vector100[i] * 100));
 }
+console.log(`Ejercicio 1:`)
 console.log(vector100);
 
 //Lee unha matriz de 5x6, e imprime a suma total da matriz.
@@ -48,6 +41,24 @@ document.write(`Total de la suma de los numeros de la matriz: ${suma} <br>`);
 //Lee un vector numérico de dimensión 10 e determina cantos elementos son positivos, negativos e ceros, imprimindo por pantalla cada un deles, para finalmente imprimir os contadores por pantalla.
 document.write(`<br>Ejercicio 3: <br>`);
 
+var vectorDimernsion10 = [10, -4, 22, 0, 44, -2, 4, 55, -1, 0];
+let contadorPositivos = 0;
+let contadorNegativos = 0;
+let contadorZeros = 0;
+
+for(let i = 0; i < vectorDimernsion10.length; i++){
+    if(vectorDimernsion10[i] == 0){
+        contadorZeros++;
+    } else if(vectorDimernsion10[i] > 0){
+        contadorPositivos++;
+    } else if(vectorDimernsion10[i] < 0){
+        contadorNegativos++;
+    }
+}
+document.write(`<br>Vector: ${vectorDimernsion10} <br>`);
+document.write(`Numeros positivos: ${contadorPositivos} <br>`);
+document.write(`Cantidad de Ceros: ${contadorZeros}<br>`);
+document.write(`Numeros negativos: ${contadorNegativos}<br>`);
 
 //Ordena ascendentemente unha serie de números dados.
 document.write(`<br>Ejercicio 4: <br>`);
@@ -68,7 +79,39 @@ for(let i = 0; i < array10Numeros.length; i++){
 document.write(`Suma: ${suma10Numeros}<br>`)
 document.write(`Media: ${media10Numeros}<br>`)
 
+//Encher unha matriz 3x3 e amosar a diagonal principal.
+document.write(`<br>Ejercicio 6: <br>`);
+var array3x3 = [];
+for(let i = 0; i < 3; i++) {
+    array3x3.push(Math.floor(Math.random() * 100) + 1);
+    for(let j = 0; j < array3x3[i].length; j++){
+        array3x3[i].push(Math.floor(Math.random() * 100) + 1);
+    }
+}
+document.write(`La diagonal principal: ${array3x3}`);
 
+
+
+//Solicitar os datos dunha matriz 3x4 e amosala trasposta.
+document.write(`<br>Ejercicio 7: <br>`);
+var matriz3x4 = [];
+
+for(let i = 0; i < 3; i++){
+    matriz3x4[i] = [];
+    for(let j = 0; j < 4; j++){
+        matriz3x4[i][j] = (Math.floor(Math.random() * 30) + 1) + (Math.floor(Math.random() * 30) + 1);
+    }
+} 
+
+document.write(`<table border="1" style="text-align: center; background-color: #b0c2f2">`);
+for (var i = 0; i < matriz3x4.length; i++) {
+    document.write("<tr>");
+    for (var j = 0; j < matriz3x4[i].length; j++) {
+        document.write("<td>" + matriz3x4[i][j] + "</td>");
+    }
+    document.write("</tr>");
+}
+document.write("</table>");
 
 
 //Dado un vector de N elementos, modificar ese vector para que cada elemento conteña a suma dos anteriores.
@@ -84,34 +127,34 @@ for(let i = 0; i < numeroElementos; i++){
         vectorElementoSumado[j] = vectorElementoSumado.push(vectorElemento[i] + vectorElemento[i]);
     }
 }
-document.write(vectorElementoSumado);
+document.write(`${vectorElementoSumado}<br>`);
 
 
 //Dado un vector de N elementos, devolver outro vector cos elementos ao revés.
 document.write(`<br>Ejercicio 9: <br>`);
-var arrayDerecho = [1, 3, 4, 5, 6, 7]
-
-
+var arrayDerecho = [1, 3, 4, 5, 6, 7];
+document.write(`Array normal: ${arrayDerecho}<br>`);
+document.write(`Array del reves: ${arrayDerecho.reverse()}<br>`);
 
 //Escribir un programa para ler 10 números por teclado e indicar cantos son maiores que a media.
 document.write(`<br>Ejercicio 10: <br>`);
 
-
 var arrayAA = [1, 4, 5, 7, 8, 11, 10, 12, 19];
 var sumaTotalNumeros = 0;
-var mediaTotalNumeros = 0;
 var arrayMayoresQueLaMedia = [];
 
 for(let i = 0; i < arrayAA.length; i++){
     sumaTotalNumeros += arrayAA[i];
-    mediaTotalNumeros = sumaTotalNumeros / arrayAA.length;
-    if(arrayAA[i] > mediaTotalNumeros){
+}
+var mediaArrayAA = sumaTotalNumeros / arrayAA.length;
+for(let i = 0; i < arrayAA.length; i++){
+    if(arrayAA[i] > mediaArrayAA){
         arrayMayoresQueLaMedia.push(arrayAA[i]);
     }
 }
 document.write(`Suma de los numeros: ${sumaTotalNumeros}`);
-document.write(`<br>Media de los numeros: ${mediaTotalNumeros}`);
-document.write(`<br>Numeros mayores a la media: ${arrayMayoresQueLaMedia}`)
+document.write(`<br>Media de los numeros: ${mediaArrayAA}`);
+document.write(`<br>Numeros mayores a la media: ${arrayMayoresQueLaMedia}<br>`)
 
 
 //Crea un vector de números dun tamaño introducido por teclado, éncheo con números aleatorios primos menores que 100 e indica cal é o maior de todos eles.
@@ -119,6 +162,22 @@ document.write(`<br>Ejercicio 11: <br>`);
 let usuarioTamano = prompt(`Cuantos numeros desea introducir`);
 var arrayRandom = [];
 
-for(let i = 0; i <= usuarioTamano; i++){
-    arrayRandom.push(Math.random());
+for(let i = 0; i < usuarioTamano; i++){
+    arrayRandom.push(Math.floor(Math.random() * 100) + 1);
 }
+
+let esPrimo = true;
+  for (let i = 2; i <= Math.sqrt(numeroAleatorio); i++) {
+    if (numeroAleatorio % i === 0) {
+      esPrimo = false;
+      break;
+    }
+  }
+  if (esPrimo) {
+    vector.push(numeroAleatorio);
+    if (numeroAleatorio > mayorPrimo) {
+      mayorPrimo = numeroAleatorio;
+    }
+  }
+
+document.write(`Vector: ${arrayRandom}<br`);

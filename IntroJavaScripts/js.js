@@ -370,3 +370,24 @@ while(eleccion != 5){
                 break;
     }
 }
+
+
+var mapa = new Map([
+    [698135812, "Sam"],
+    [698135811, "AA"]
+]);
+mapa.set(698131415, "Pablo").set(691313132, "Carlos");
+mapa.delete(698135812, "Sam");
+
+for(let[telefono, persona] of mapa){
+    console.log(`El telefono de ${persona} es: ${telefono}`);
+}
+
+console.log(mapa.has(698135811));
+console.log(mapa.get(698131415));
+
+console.log([...mapa])
+
+
+
+
