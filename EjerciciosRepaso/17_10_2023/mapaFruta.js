@@ -2,6 +2,7 @@ var nVeces = parseInt(prompt(`Cuantos articulos desea comprar:`));
 var contador = 0;
 var total = 0;
 var totalIVA = 0;
+document.write(`Compra:`);
 while(contador < nVeces){
     contador++;
     var mapa = new Map([
@@ -20,7 +21,7 @@ while(contador < nVeces){
     for(var [articulo, precio] of mapa){
         if(articulo == productosUsuario){
             total += precio;
-            document.write(`<br>Producto: ${articulo};  Precio: ${precio}`);
+            document.write(`<br>${articulo}: ${precio}€`);
         }
     }
 }

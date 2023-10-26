@@ -36,6 +36,6 @@ if(Number(usuario.length) == 8){
 }else if(!Number(usuario)){
     document.write(`Solo se pueden introducir numeros`);
 } else{
-    document.write("No puedes introducir mas de 8 numeros");
+    document.write(`No puedes introducir mas de 8 numeros`);
 }
 
