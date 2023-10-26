@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        //Declaramos el mapa con las ciudades
+        var ciudades = new Map([
+            ["A Coruña", 45000],
+            ["Madrid", 75000],
+            ["Valencia", 10000],
+            ["Barcelona", 65000],
+        ])
+
+        //Declarar variables
+        var distanciaLejana = 0;
+        var ciudadLejana = "";
+        var distanciaCercana = 0;
+        var ciudadCercana = "";
+        var distanciaMedia = 0;
+        var nCiudades = 0;
+        var distancias = []
+
+        //Recorremos el mapa
+        for(var [ciudad, valor] of ciudades){
+            //Sumamos los valores para calcular la distancia media
+            distanciaMedia += valor;
+            //Añadimos a un array los valores y las ciudades para conocer la ciudad mas cercana
+            distancias.push([valor, ciudad]);
+            //Vamos contando cuantas ciudades hay
+            nCiudades++;
+            //Comprobamos que distancia es la mas lejana
+            if(valor > distanciaLejana){
+                distanciaLejana = valor;
+                ciudadLejana = ciudad;
+            }
+        }
+        //Imprimimos los resultados
+        document.write("Ciudad mas lejana: ", ciudadLejana, "=>", distanciaLejana, "km<br>");
+        //Creamos el bucle para recorrer el array mencionado anteriormente
+        for(let i = 0; i < distancias.length; i++){
+            //Ordenamos el array segun los kilometros
+            distancias.sort()
+            //Definimos las variables con el primer elemento y su contenido
+            distanciaCercana = distancias[0][0];
+            ciudadCercana = distancias[0][1];
+        }
+        document.write("Ciudad mas cercana: ", ciudadCercana, "=>", distanciaCercana, "km<br>");
+        document.write("Distancia Media de todos los puntos: ", distanciaMedia / nCiudades, "km<br>");
+
+    </script>
+</body>
+</html>

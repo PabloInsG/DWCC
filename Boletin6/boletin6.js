@@ -1,9 +1,3 @@
-
-
-
-
-
-
 //Ejercicio 8
 function generar(){
     var numero1 = Math.floor(Math.random() * 10) + 1;

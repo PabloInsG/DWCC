@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        //Creamos el array de las personas
+        var arrayPersonas = ["pablo", "jesus", "carlos", "samuel", "breogan"];
+        //Creamos el mapa vacio para posterior uso
+        var mapaPersonas = new Map([]);
+
+        //Recorremos el array de las personas y le añadimos al mapa los valores de "i" que sera la posicion, mas la persona que se encuentre en el array en la posicion de "i" 
+        for(let i = 0; i < arrayPersonas.length; i++){
+            mapaPersonas.set(i + 1, arrayPersonas[i]);
+        }
+        
+        //Mostramos por pantalla
+        document.write("Resultado del mapa: <br>");
+        //Recorremos el mapa con el indice y los valores del mismo
+        for(let [posicion, valor] of mapaPersonas){
+            document.write(posicion, ": " , valor, "<br>");
+        }
+    </script>
+</body>
+</html>

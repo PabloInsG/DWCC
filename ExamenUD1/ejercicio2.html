@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        //Creamos dos variables una con la cadena de la pagina web a analizar y otra para contabilizar los puntos de esa cadena
+        var contadorPuntos = 0;
+        var paginaWeb = "www.hola.com";
+        
+        //Si la cadena empieza por "www." realizaremos la siguientes comprobacions si no no sera valida la direccion
+        if(paginaWeb.startsWith("www.")){
+                //Recorremos la cadena
+                for(let i = 0; i < paginaWeb.length; i++){
+                    //Si la pagina tiene "." le sumamos 1 a la variable de antes
+                    if(paginaWeb[i].includes(".")){
+                        contadorPuntos++;
+                    }
+                }
+                //Si despues de verificar si tiene puntos la variable puntos es igual a dos entramos a la ultima comprobacion
+                if(contadorPuntos == 2){
+                    //Ya que tenemos dos puntos sabemos que haciendo un lastIndexOf nos deberia de dar el dominio por lo tanto extraemos ese pedazo de la cadena a partir del segundo punto
+                    var comprobarDominio = paginaWeb.substr(paginaWeb.lastIndexOf(".") + 1); 
+                    //Como el dominio debe de tener minimo 2 caracteres y maximo 3 hacemos la comprobacion siguiente 
+                    if(comprobarDominio.length <= 3 && comprobarDominio.length > 1){
+                        document.write("Pagina Web Valida");
+                    } else{
+                        document.write("Pagina Web Invalida");
+                    }
+
+                } else{
+                    document.write("Pagina Web Invalida");
+                }
+            }else{
+                document.write("Pagina Web Invalida");
+            }
+    </script>
+</body>
+</html>

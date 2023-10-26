@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        //Preguntamos al usuario el tamaño de los conjuntos y declaramos las variables necesarias
+        var tamano = parseInt(prompt(`Introduce el tamaño de los conjuntos`));
+        var primerConjunto = new Set();
+        var segundoConjunto = new Set();
+        var conjuntos = new Set();
+        var array1 = [];
+        var array2 = [];
+
+        //Vamos añadiendo a los dos conjuntos los valores que el usuario quiere
+        for(let i = 1; i <= tamano; i++){
+            primerConjunto.add(prompt(`Introduce el ${i} elemento del primer conjunto: `));
+        }
+        for(let i = 1; i <= tamano; i++){
+            segundoConjunto.add(prompt(`Introduce el ${i} elemento del primer conjunto: `));
+        }
+
+        //Recorremos el primer conjunto y lo añadimos al conjunto global
+        for(var elementosPrimer of primerConjunto){
+            conjuntos.add(elementosPrimer);
+            array1.push(elementosPrimer);
+        }
+        //Recorremos el segundo conjunto y lo añadimos al conjunto global
+        for(var elementosSegundo of segundoConjunto){
+            conjuntos.add(elementosSegundo);
+            array2.push(elementosSegundo);
+        }
+        
+        //Recorremos el conjunto global y imprimimos por pantalla el resultado del mismo
+        document.write("Union de ambos conjuntos: ")
+        for(var elementos of conjuntos){
+            document.write(elementos, " | ");
+        }
+
+
+        document.write("<br>Elementos repetidos: ")
+        //Recorremos el primer array con los elementos del primer conjunto
+        for(let j = 0; j < array1.length; j++){
+            //Lo comparamos con el segundo array que contiene los elementos del segundo conjunto y si se repiten imprimimos los valores
+            if(array1.includes(array2[j])){
+                document.write(array2[j], " | ");
+            }
+        }
+        document.write("<br>Elementos que no estan en el primer conjunto: ")
+        for(let j = 0; j < array1.length; j++){
+            //Comprobamos si esta vez el primer array no contiene los elementos del segundo array y imprimimos los distintos de cada uno
+            if(!array1.includes(array2[j])){
+                document.write(array2[j], " | ");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

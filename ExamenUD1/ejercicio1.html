@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        //Creamos el menu
+        console.log("a) Cargar Alumnos");
+        console.log("b) Eliminar un alumno");
+        console.log("c) Agregar nota a un alumno");
+        console.log("d) Borrar nota a un alumno");
+        console.log("e) Salir");
+        let opcion;
+        //Creamos el array
+        var alumnos = [["carlos"], ["jesus"], ["pablo"]];
+        //Creamos un bucle que no salga hasta que opcion que es la variable que nos va a pasar el usuario sea igual a "e"
+        while(opcion != "e"){
+            opcion = prompt(`Introduce una de las opciones:`);
+            //Creamos el switch
+            switch(opcion){
+                case "a":
+                    for(let i = 0; i < alumnos.length; i++){
+                        for(let j = 0; j < alumnos[i].length; j++){
+                            console.log(alumnos[i][j]);
+                        }
+                    }
+                    break;
+                case "b":
+                    let borrarAlumno = prompt(`Que alumno desea eliminar:`);
+                    borrarAlumno.toLowerCase();
+                    for(let i = 0; i < alumnos.length; i++){
+                        for(let j = 0; j < alumnos[i].length; j++){
+                            if(alumnos[i][j] == borrarAlumno){
+                                alumnos[i].shift();
+                                alumnos[i].pop();
+                                console.log("Alumno borrado correctamente");
+                            } 
+                        }
+                    }
+                    break;
+                case "c":
+                    let alumno = prompt(`A que alumno desea introducir una nota:`);
+                    alumno.toLowerCase();
+                    for(let i = 0; i < alumnos.length; i++){
+                        for(let j = 0; j < alumnos[i].length; j++){
+                            if(alumnos[i][j] == alumno){
+                                var notaAlumno = parseInt(prompt(`Introduzca una nota:`));
+                                alumnos[i].push(notaAlumno);
+                                console.log("Nota del alumno añadida correctamente");
+                            }
+                        }
+                    }
+                    break;
+                case "d":
+                    let alumnoo = prompt(`A que alumno desea borrar una nota`);
+                    alumnoo.toLowerCase();
+                    for(let i = 0; i < alumnos.length; i++){
+                        for(let j = 0; j < alumnos[i].length; j++){
+                            if(alumnos[i][j] == alumnoo){
+                                alumnos[i].pop();
+                                console.log("Nota del alumno borrada correctamente");
+                            }
+                        }
+                    }
+                    break;
+                case "e":
+                    console.log("Saliendo del programa...");
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
