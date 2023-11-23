@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CuentaBancaria{
+            constructor(propietario, saldo){
+                this.propietario = propietario;
+                this.saldo = saldo;
+            }
+            
+            sacarDinero(aRetirar){
+                if(this.saldo > aRetirar && (this.saldo-aRetirar) > 0){
+                    this.saldo -= aRetirar;
+                    console.log("Saldo Actual despues de Retirar: ", this.saldo);
+                } else{
+                    console.log("Saldo Insuficiente para retirar la cantidad indicada")
+                }
+            }
+            
+            ingresarDinero(ingreso){
+                if(!isNaN(ingreso)){
+                    this.saldo += ingreso;
+                    console.log("Saldo Actualizado: ", this.saldo)
+                } else{
+                    console.log("Error, la cantidad debe ser un valor numerico")
+                }
+            }
+
+            verDatos(){
+                console.log("Propietario: ", this.propietario);
+                console.log("Saldo: ", this.saldo);
+            }
+        }
+
+        var cuenta = new CuentaBancaria("Pablo", 1000);
+
+        cuenta.sacarDinero(800)
+        cuenta.ingresarDinero(200)
+        cuenta.verDatos()
+    </script>
+</body>
+</html>
