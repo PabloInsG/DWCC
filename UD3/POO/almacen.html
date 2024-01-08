@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Almacen{
+            nome = "";
+            ubicacion = "";
+            n_productos = 0;
+            constructor(nome, ubicacion, n_productos){
+                this.nome = nome;
+                this.ubicacion = ubicacion;
+                this.n_productos = n_productos;
+            }
+            observador() {
+                document.write("Nombre: ", this.nome, "<br>Ubicacion: ", this.ubicacion, "<br>Cantidad Productos: ", this.n_productos, "<br><hr>")
+            }
+        }
+        
+        var miAlmacen = new Almacen("Xoguetes", "Laxe", 200);
+        miAlmacen.observador();
+
+        Almacen.prototype.facturacion = "100000€";
+        Almacen.prototype.observadorConFacturacion = function() {
+            document.write("Nombre: ", this.nome, "<br>Ubicacion: ", this.ubicacion, "<br>Cantidad Productos: ", this.n_productos, "<br>Facturación Anual: ", this.facturacion);
+        }
+
+        miAlmacen.observadorConFacturacion();
+    </script>
+</body>
+</html>

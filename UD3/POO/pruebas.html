@@ -73,6 +73,11 @@
         var miViaje = new Viaje("MAD", "ZAR", 10, 300);
         miViaje.mostrar();
 
+        Viaje.prototype.costeDiario = function (){
+            return this.precio / this.dias;
+        }
+        console.log(Viaje.prototype);
+
     </script>
 </body>
 </html>
