@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mascota{
+            nome = "";
+            direccion = "";
+            nim = 0;
+            edad = 0;
+            constructor (nome, direccion, nim, edad){
+                this.nome = nome;
+                this.direccion = direccion;
+                this.nim = nim;
+                this.edad = edad;
+            }
+        }
+
+        var perro = new Mascota("Kuma", "Zas", 1243, 3);
+
+        console.log(JSON.stringify(perro));
+
+    </script>
+</body>
+</html>

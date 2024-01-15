@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = prompt("Introduce la pagina web que desea")
+
+        function validarWeb(user){
+            var reg = /^(http:\/\/www\.|https:\/\/www\.){1}[a-z0-9]{1,}(\.[a-z]{1,4}){1}$/;
+            if(reg.test(user)){
+                return alert("Pagina Web Valida");
+            } else{
+                return alert("Pagina Web no Valida");
+            } 
+        }
+
+        validarWeb(user);
+
+    </script>
+</body>
+</html>
