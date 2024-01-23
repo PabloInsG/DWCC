@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boton">Añadir</button>
+    <button id="boton2">Borrar</button>
+    <ol id="lista">Lista</ol>
+    <script>
+        var contador = 1;
+        function add(){
+            var li = document.createElement('li');
+            li.textContent = contador;
+            contador++;
+            lista.append(li);
+        }
+
+        function eliminar(){
+            lista.lastChild.remove();
+        }
+
+        var lista = document.querySelector("#lista");
+        var boton = document.querySelector("#boton");
+        var boton2 = document.querySelector("#boton2");
+
+        boton.addEventListener("click", add)
+        boton2.addEventListener("click", eliminar)
+    </script>
+</body>
+</html>

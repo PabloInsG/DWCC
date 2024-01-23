@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .a{
+            background: lightblue;
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .b{
+            background: red;
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="b" id="div2"><img src="manchester-united-logo-512x512.png" id="foto1" alt="" width="360px"></div>
+        <div class="a" id="div1"><img src="manchester-cityc.png" id="foto2" alt="" width="360px"></div>
+    </div>
+    <script>
+        function cambiar(){
+            rojo.style.background = "lightblue";
+            azul.style.background = "red";
+            var foto1 = document.querySelector("#foto1")
+            var foto2 = document.querySelector("#foto2")
+            foto1.src = "manchester-cityc.png";
+            foto2.src = "manchester-united-logo-512x512.png";
+        }
+        
+        function reset(){
+            azul.style.background = "lightblue";
+            rojo.style.background = "red";
+            foto1.src = "manchester-united-logo-512x512.png";
+            foto2.src = "manchester-cityc.png";
+        }
+        
+       var rojo = document.querySelector('#div2')
+       var azul = document.querySelector('#div1')
+
+        rojo.addEventListener("mouseover", cambiar);
+        rojo.addEventListener("mouseout", reset)
+
+    </script>
+</body>
+</html>

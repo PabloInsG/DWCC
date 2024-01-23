@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button{
+            width: 200px;
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        table{
+            width: 100%;
+            align-items: center;
+        }
+
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="div">
+        <button id="boton">Añadir imagen</button>
+        <table id="tabla" border="1">
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+            <tr id="fila1"></tr>
+            <tr id="fila2"></tr>
+        </table>
+    </div>
+    <script>
+        var boton = document.querySelector('#boton');
+        var tabla = document.querySelector('#tabla');
+        var fila1 = document.querySelector('#fila1');
+        var fila2 = document.querySelector('#fila2');
+        var contador = 0;
+
+        boton.addEventListener('click', addToTable);
+
+        function addToTable(){
+            var usuario = prompt('Un numero del 1-6:');
+            var td = document.createElement('td');
+            td.setAttribute('id', 'posi' + contador);
+            var imagen = document.createElement('img');
+            imagen.src = usuario + ".png";
+            imagen.setAttribute('id', 'img' + contador);
+            imagen.style.width = "200px";
+            if(contador <= 3){
+                fila1.appendChild(td);
+                td.appendChild(imagen);
+                contador++;
+                td.addEventListener("click", drop(td.getAttribute('id')))
+            } 
+            if(contador > 3 && contador <= 6){
+                fila2.appendChild(td);
+                td.appendChild(imagen);
+                contador++;
+            }
+        }
+        
+        function drop(posi){
+            for(let i = 0; i < fila1.children.length -1; i++){
+                if(fila1.children[i].getAttribute('id') == posi){
+                    fila1.children[i].remove;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

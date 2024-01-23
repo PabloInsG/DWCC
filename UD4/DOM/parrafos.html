@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        container{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="div">
+        <button id="genera">Generar</button>
+    </div>
+
+    <script>
+        var div = document.querySelector('#div');
+        var boton = document.querySelector('#genera');
+        var contador = 1;
+        boton.addEventListener("click", generar )
+
+        function generar(){
+            var p = document.createElement('p');
+            if(contador % 2 == 0){
+                p.style.color = "red";
+                p.textContent = `Parrafo ${contador}`;
+            } else{
+                p.style.color = "green";
+                p.textContent = `Parrafo ${contador}`;
+            }
+            div.appendChild(p);
+            contador++;
+        }
+    </script>
+</body>
+</html>
