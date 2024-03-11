@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        .ocultar{
+            margin-top: 10px;
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+        .fecha{
+            width: 400px;
+            height: 10%;
+            background-color: green;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .cambiarColor{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function(){
+        //Parrafo
+        $("#parrafo").hover(function(){
+            $(this).text("Adios");
+            $("#parrafo").mouseout(function(){
+                $(this).text("Hola");
+            })
+        })
+
+        //Ocultar Elemento
+        $(".ocultar").on("click", function(){
+            $(".ocultar").hide();
+            $(".ejercicioOcultar").append("<button id='show'>Desocultar</button>");
+            //Mostrar Elemento
+            $('#show').on("click", function(){
+                $(".ocultar").show();
+                $(".ejercicioOcultar").children("#show").remove();
+            })
+        })
+
+        //Cambiar Color
+        $(".cambiarColor").on("click", function(){
+            $(this).css("background-color", "blue");
+        })
+
+        //Fecha
+        $(".fecha").click(function(){
+            var fecha = new Date();
+            $(this).children("#fecha").remove();
+            $(this).append("<p id='fecha'>" + fecha + "</p>")
+        })
+
+        //Doble del numero
+        $('#sumbit').on("click", function(){
+            var num = $("#numero").val();
+            var resultado = num * 2;
+            $(".numero").append("<p>Doble: " + resultado + "</p>")
+        })
+    })
+    </script>
+</head>
+<body>
+    <div class="cambiarTexto">
+        <p id="parrafo">Hola</p>
+    </div>
+    <div class="ejercicioOcultar">
+        <div class="ocultar"></div>
+    </div>
+    <div class="cambiarColor"></div>
+    <div class="fecha"></div>
+    <div class="numero">
+        <input type="text" name="num" id="numero">
+        <input type="submit" value="Doble del numero" id="sumbit">
+    </div>
+</body>
+</html>

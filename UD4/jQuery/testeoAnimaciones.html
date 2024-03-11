@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>fadeIn demo</title>
+  <style>
+    div{
+        width: 400px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <button>Click</button>
+    <div>
+        <img id="foto" width="200px" src="harrypotter2.jpg" alt="">
+    </div>
+<script>
+ fadeIn
+  $( "div" ).fadeIn( "3000", function() {
+    $( "img" ).fadeIn( 100 );
+  });
+
+/* fadeOut
+  $("div").fadeOut(3000, "linear");
+*/
+/* fadeToggle
+  $("button").on("click", function(){
+    $("div").fadeToggle("slow", "linear")})
+*/
+/* slideDown
+   $("button").on("click", function(){
+    $("div").slideDown("slow");
+   }) 
+*/
+/* slideUp
+   $("button").on("click", function(){
+    $("div").slideUp("slow");
+   }) 
+*/
+/* slideToggle
+   $("button").on("click", function(){
+    $("div").slideToggle("slow");
+   })
+*/
+/* Show
+  $("button").on("click", function(){
+   $("div").show("slow");
+  })
+*/
+/* Hide
+ $("button").on("click", function(){
+  $("div").hide("slow");
+ })
+*/
+/* Toogle
+$("button").on("click", function(){
+ $("div").toggle("slow");
+})
+*/
+/*Animate*/
+/*setInterval(function(){
+                if($("img").css("width") == "200px"){
+                    $("img").animate({"width": "500px", "height": "600px"})
+                } else{
+                    $("img").animate({"width": "200px", "height": "300px"})
+                }
+            }, 3000)*/
+</script>
+ 
+</body>
+</html>

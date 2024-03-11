@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(21, 21, 21);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .calculadora{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(80px, auto);
+            border-radius: 0.5rem;
+        }
+        
+        .grid{
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            grid-column-gap: 0.3em;
+        }
+
+        .resultado{
+            width: 13%;
+            display: flex;
+            flex-direction: row-reverse;
+            color: #FFFFFF;
+        }
+
+        h1{
+            font-size: 45px;
+        }
+
+        button{
+            width: 70px;
+            height: 70px;
+            border-radius: 4rem;
+            font-size: 20px;
+            background-color: rgb(54, 53, 53);
+            border: solid 1px rgb(21, 21, 21);
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .naranja{
+            background: orange;
+        }
+
+        .gris{
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+      var resultado = document.querySelector('#resultado')
+  $( function() {
+    $( ".numero" ).click(function(event){
+        var numero1 = 0;
+        numero1 += event.value;
+    });
+  });
+    </script>
+    <div class="container">
+        <div class="calculadora">
+            <div class="resultado">
+                <h1 id="resultado">&nbsp;</h1>
+            </div>
+            <div class="grid" id="numeros">
+                <button id="num7" class="numero" value="7">7</button>
+                <button id="num8" class="numero" value="8">8</button>
+                <button id="num9" class="numero" value="9">9</button>
+                <button id="multiplicar" class="naranja">x</button>
+                <button id="num4" class="numero" value="4">4</button>
+                <button id="num5" class="numero" value="5">5</button>
+                <button id="num6" class="numero" value="6">6</button>
+                <button id="restar" class="naranja">-</button>
+                <button id="num1" class="numero" value="1">1</button>
+                <button id="num2" class="numero" value="2">2</button>
+                <button id="num3" class="numero" value="3">3</button>
+                <button id="sumar" class="naranja">+</button>
+                <button id="dividir" class="naranja">/</button>
+                <button id="num0" class="numero" value="0">0</button>
+                <button id="reset" class="gris">C</button>
+                <button id="calcular" class="naranja">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

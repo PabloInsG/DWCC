@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Droppable</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  <style>
+    .container{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .lista{
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .acierto{
+        background: lightgreen;
+        border: solid 1px green;
+    }
+
+    .centro{
+        width: 30%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .draggable { width: 200px; height: 50px; padding: 0.5em; float: left; margin: 10px 0px 10px 0; display: flex;justify-content: center; }
+    #llanas { width: 550px; height: 250px; padding: 0.5em; display: flex; flex-direction: column; align-items: center;}
+    #esdrujulas { width: 550px; height: 250px; padding: 0.5em; display: flex; flex-direction: column; align-items: center;}
+    #agudas { width: 550px; height: 250px; padding: 0.5em; display: flex; flex-direction: column; align-items: center;}
+  </style>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".draggable" ).draggable();  
+    $( "#agudas" ).droppable({
+      drop: function( event, ui ) {
+        var objeto = $(ui.draggable);
+        var regex = /(a|e|i|o|u|n|s|é){1}/
+        var value = objeto.text();
+        for(let i = value.length-1; i < value.length; i++){
+            if(regex.test(value[i]) && value != "Sudáfrica" && value != "ejército"){
+                objeto.removeClass("ui-state-error");
+                objeto.addClass( "acierto")
+                objeto.draggable({ revert: "invalid" });
+            } else{
+                objeto.addClass("ui-state-error");
+                $(".ui-state-error").animate({
+                        top: "0px",
+                        left: "0px"
+                });
+            }
+        }
+      }
+    });
+    $( "#llanas" ).droppable({
+      drop: function( event, ui ) {
+        var objeto = $(ui.draggable);
+        var regex = /([^a|e|i|o|u|n|s|é]){1}/
+        var value = objeto.text();
+        for(let i = value.length-1; i < value.length; i++){
+            if(regex.test(value[i])){
+                objeto.removeClass("ui-state-error");
+                objeto.addClass( "acierto")
+                objeto.draggable({ revert: "invalid" });
+            } else{
+                objeto.addClass("ui-state-error");
+                $(".ui-state-error").animate({
+                        top: "0px",
+                        left: "0px"
+                });
+            }
+        }
+      }
+    });
+    $( "#esdrujulas" ).droppable({
+      drop: function( event, ui ) {
+        var objeto = $(ui.draggable);
+        var value = objeto.text();
+        if(value == "Sudáfrica" || value =="ejército"){
+            objeto.removeClass("ui-state-error");
+                objeto.addClass( "acierto")
+                objeto.draggable({ revert: "invalid" });
+        } else{
+            objeto.addClass("ui-state-error");
+            $(".ui-state-error").animate({
+              top: "0px",
+              left: "0px"
+            });
+        }
+      }
+  });
+});
+  </script>
+</head>
+<body>
+ <div class="container">
+    <div class="lista">
+        <div class="draggable ui-widget-content"><p>camión</p></div>
+        <div class="draggable ui-widget-content"><p>coche</p></div>
+        <div class="draggable ui-widget-content"><p>café</p></div>
+        <div class="draggable ui-widget-content"><p>líder</p></div>
+        <div class="draggable ui-widget-content"><p>cárcel</p></div>
+        <div class="draggable ui-widget-content"><p>tierra</p></div>
+        <div class="draggable ui-widget-content"><p>ejército</p></div>
+        <div class="draggable ui-widget-content"><p>negro</p></div>
+        <div class="draggable ui-widget-content"><p>Sudáfrica</p></div>
+        <div class="draggable ui-widget-content"><p>rojo</p></div>
+    </div>
+      
+     <div class="centro">
+         <div id="agudas" class="ui-widget-header">
+           <p>Agudas</p>
+         </div>
+         <div id="llanas" class="ui-widget-header">
+             <p>Llanas</p>
+        </div>
+        <div id="esdrujulas" class="ui-widget-header">
+            <p>Esdrujulas</p>
+        </div>
+     </div>
+ </div>
+</body>
+</html>

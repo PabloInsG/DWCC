@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Ejercicio 1</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 80vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .input{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 50px;
+        }
+        
+        img{
+            margin-left: 10px;
+            width: 30px;
+            cursor: pointer;
+        }
+        #resultado{
+            width: 500px;
+            height: 100px;
+            display: flex;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <input type="text" id="correo">
+            <div id='botonEmail'>
+                <img src="comprobado.png" alt="iconoBoton">
+            </div>
+        </div>
+        <div id="resultado"></div>
+    </div>
+<script>
+    $("#botonEmail").click(function () {
+        let regExp=/^[a-z0-9_.]+@[a-z0-9.]+\.[a-z]{2,4}$/i;
+        let correo = $("#correo").val();
+
+        if (regExp.test(correo)) {
+                $("#resultado").css("background-color", "lightgreen");
+                $("#resultado").css("visibility", "visible");
+                $("#resultado").text("Correo electrónico válido");
+            } else {
+                $("#resultado").css("background-color", "lightcoral");
+                $("#resultado").css("visibility", "visible");
+                $("#resultado").text("Correo electrónico inválido");
+            }
+    });
+</script>
+</body>
+</html>

@@ -62,23 +62,21 @@
                 fila1.appendChild(td);
                 td.appendChild(imagen);
                 contador++;
-                td.addEventListener("click", drop(td.getAttribute('id')))
+                imagen.onclick = () => {
+                    var getImagen = document.querySelector('#' + imagen.getAttribute('id'));
+                    getImagen.src = "";
+                }
             } 
             if(contador > 3 && contador <= 6){
                 fila2.appendChild(td);
                 td.appendChild(imagen);
                 contador++;
-            }
-        }
-        
-        function drop(posi){
-            for(let i = 0; i < fila1.children.length -1; i++){
-                if(fila1.children[i].getAttribute('id') == posi){
-                    fila1.children[i].remove;
+                imagen.onclick = ()=> {
+                    var getImagen = document.querySelector('#' + imagen.getAttribute('id'));
+                    getImagen.src = "";
                 }
             }
         }
-
 
     </script>
 </body>

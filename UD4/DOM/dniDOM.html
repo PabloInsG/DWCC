@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divTexto{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            justify-content: center;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .formulario{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            color: #3c3c3c;
+        }
+
+        .login{
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            width: 800px;
+            height: 420px;
+            border: solid 1px #000000;
+            border-radius: 1rem 1rem 1rem 1rem;
+        }
+
+        input{
+            width: 80%;
+            height: 35px;
+            margin-left: 5px;
+            font-size: 18px;
+        }
+        
+        h1{
+            font-size: 32px;
+            margin-left: 5px;
+        }
+        
+        p{
+            font-size: 18px;
+            margin-left: 5px;
+        }
+        
+        input[type="text"]:focus{
+            font-family: Raleway;
+            color: #3c3c3c;
+        }
+
+        .submit{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: -10px
+        }
+
+        input[type="submit"]{
+            width: 20%;
+            height: 45px;
+            background-color: lightblue;
+            border: solid 1px #FFFFFF;
+            cursor: pointer;
+        }   
+
+        input[type="submit"]:hover{
+            scale: 1.1;
+            transition: all .5s ease-in-out;
+            color: #000000;
+            background-color: #cfcece;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="divTexto" id="div"></div>
+        <div class="formulario">
+            <div class="login">
+                <form action="" method="POST">
+                    <h1 class="texto">Datos Identificacion</h1>
+                    <p class="texto">DNI:</p>
+                    <input type="text" name="dni" id="dni">
+                    <p class="texto">Primer Apellido:</p>
+                    <input type="text" name="apellido" id="apellido" disabled>
+                    <p class="texto">Fecha:</p>
+                    <input type="text" name="fecha" id="fecha" disabled>
+                    <div class="submit">
+                        <input id="submit" type="submit" value="Registar" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+            let dni = /(^[0-9]{8}[A-Z]{1})$/;
+            let validDate = /(^([0-9]{2}\/){2}[0-9]{4})$/;
+            let container = document.querySelector('#div');
+            let valido = document.createElement('p');
+            container.appendChild(valido);
+
+            function validarCampo(event){
+                var campoDniValue = document.querySelector('#dni').value
+                if(dni.test(campoDniValue) == true){
+                    campoApellido.disabled = false;
+                    var campoApellidoValue = document.querySelector('#apellido').value
+                    container.style.background = "lightgreen";
+                    valido.textContent = "DNI Valido. Introduce el siguiente campo"
+                }
+                if(campoApellidoValue.length > 1){
+                    var campoFechaValue = document.querySelector('#fecha').value
+                    campoFecha.disabled = false;
+                    valido.textContent = "Apellido Valido. Introduce el siguiente campo";
+                }
+                if(validDate.test(campoFechaValue) == true){
+                    let boton = document.querySelector('#submit');
+                    boton.disabled = false;
+                    valido.textContent = "Todos los campos son validos";
+                }
+            }
+
+            let campoDNI = document.querySelector('#dni');
+            campoDNI.addEventListener('change', validarCampo)
+            let campoApellido = document.querySelector('#apellido');
+            campoApellido.addEventListener('change', validarCampo)
+            let campoFecha = document.querySelector('#fecha');
+            campoFecha.addEventListener('change', validarCampo)
+    </script>
+</body>
+</html>

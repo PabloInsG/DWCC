@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        /*Crea unha páxina web que teña un texto que indique que o pular Alt+F12
+    podemos colocar unha imaxe de fondo. O texto ten que estar centrado na
+    pantalla horizontal e verticalmente. Ao iniciar a pantalla será negra co texto
+    indicado e cando o usuario non pulse tecla, a imaxe se amose*/
+    $(window).on("keydown", (event) =>{
+        let tecla = event.key;
+        if(tecla == "F12" && event.altKey){
+        document.querySelector("#wrap").style.backgroundImage = "url('harrypotter2.jpg')"
+        }
+    });
+    </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .container{
+            display: flex;
+            width: 100%;
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="wrap">
+        <p id="texto">Pulsa Alt+F12</p>
+    </div>
+</body>

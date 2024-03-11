@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../libreria/jquery-1.7.js"></script>
+    <script>
+        //Creamos una funcion para las variables de tipo String
+        String.prototype.hayNumeros = function(){
+            //Creamos una expresion regular que compruebe que contenga un numero
+            var regExp = /[0-9]/g;
+            //Comprobamos la cadena de texto con la expresion regular
+            if(regExp.test(this)){
+                //Si es true imprimimos por pantalla que contiene numeros
+                document.write('La cadena: "' + this + '", contiene numeros');
+            } else{
+                //Si es false imprimimos por pantalla que no contiene numeros
+                document.write('La cadena: "' + this + '", no contiene numeros');
+            }
+        }
+        //Creamos la variable de tipo String
+        var cadena = "Hola que tal";
+        //Llamamos a la funcion
+        cadena.hayNumeros();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
