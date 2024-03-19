@@ -45,6 +45,18 @@ const pieza = {
         [1, 1]]
 }
 
+const pause = document.querySelector(".cosas");
+var resume = document.querySelector("#resume");
+resume.addEventListener("click", ()=>{
+    pause.style.display = "none";
+})
+
+var restart = document.querySelector("#restart");
+restart.addEventListener("click", ()=>{
+    location.reload();
+})
+
+
 function update(){
     draw();
     window.requestAnimationFrame(update);
@@ -94,8 +106,13 @@ function solidificarPieza(){
     }
 }
 
-
 document.addEventListener('keydown', event =>{
+    if(event.key == "Escape"){
+        pause.style.display = "flex"
+        pause.style.flexDirection = "column";
+        pause.style.animation = "fadeInAnimation ease 1s";
+        pause.style.opacity = "1";
+    }
     if(event.key == "ArrowLeft"){
         pieza.position.x --
         if(checkCollision()){
@@ -115,5 +132,9 @@ document.addEventListener('keydown', event =>{
         }
     } 
 })
-update()
 
+
+
+
+
+update()
