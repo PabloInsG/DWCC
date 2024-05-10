@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Obter a data actual como string
+let dataSistema = new Date().toLocaleDateString();
+
+
+// Preguntar o nome do usuario
+let nomeUsuario = prompt("Por favor, introduce o teu nome:");
+
+
+if (nomeUsuario) { // Se o usuario escribiu algo
+  // Gardar a información en LocalStorage
+  localStorage.setItem(nomeUsuario, dataSistema);
+ 
+  // Mensaxe para mostrar na páxina HTML
+  let mensaje = `Nome do usuario: ${nomeUsuario}. Data do sistema: ${dataSistema}.`;
+
+
+  // Engadir á páxina HTML
+  let divDatosLocalStorage = document.getElementById("datosLocalStorage");
+  divDatosLocalStorage.textContent = mensaje;
+} else {
+  console.log("Non se gardou a información en LocalStorage porque o nome do usuario está baleiro ou foi cancelado.");
+}
+    </script>
+</body>
+</html>
