@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../../libreria/jquery-1.7.js"></script>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .input-y-boton{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .lista{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            background-color: green;
+            color: white;
+        }
+
+        .error{
+            opacity: 0;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-y-boton">
+            <input type="text" name="web" id="web">
+            <img id="boton" src="../imagenes/boton.JPG" width="100px" alt="">
+            <p class="error">La url no es valida</p>
+        </div>
+        <div class="lista">
+            <ul id="lista">
+            </ul>
+        </div>
+    </div>
+    <script src="ejercicio2.js"></script>
+</body>
+</html>
